@@ -32,7 +32,7 @@
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.inputUserName = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.inputPassword = new System.Windows.Forms.TextBox();
             this.lblInfoCC = new System.Windows.Forms.Label();
             this.lblCCompte = new System.Windows.Forms.Label();
             this.btnConnexion = new System.Windows.Forms.Button();
@@ -68,13 +68,13 @@
             this.inputUserName.Size = new System.Drawing.Size(193, 30);
             this.inputUserName.TabIndex = 2;
             // 
-            // textBox1
+            // inputPassword
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(106, 217);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 30);
-            this.textBox1.TabIndex = 3;
+            this.inputPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputPassword.Location = new System.Drawing.Point(106, 217);
+            this.inputPassword.Name = "inputPassword";
+            this.inputPassword.Size = new System.Drawing.Size(193, 30);
+            this.inputPassword.TabIndex = 3;
             // 
             // lblInfoCC
             // 
@@ -129,7 +129,7 @@
             this.Controls.Add(this.btnConnexion);
             this.Controls.Add(this.lblCCompte);
             this.Controls.Add(this.lblInfoCC);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.inputPassword);
             this.Controls.Add(this.inputUserName);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUserName);
@@ -147,7 +147,7 @@
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox inputUserName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox inputPassword;
         private System.Windows.Forms.Label lblInfoCC;
         private System.Windows.Forms.Label lblCCompte;
         private System.Windows.Forms.Button btnConnexion;

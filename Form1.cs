@@ -42,9 +42,22 @@ namespace RayMember
 
         private void btnConnexion_Click(object sender, EventArgs e)
         {
-            frmAddAccount frmAddAccount = new frmAddAccount();
-            this.Hide();
-            frmAddAccount.Show();
+            DBUse dB = new DBUse();
+            string userNAme = inputUserName.Text;
+            string password = inputPassword.Text;
+            Encrypt encrypt = new Encrypt();
+            string psw = encrypt.init(password);
+            if (dB.Auth(userNAme, psw))
+            {
+                    frmMainMenu frmMainMenu = new frmMainMenu();
+                    this.Hide();
+                    frmMainMenu.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Mauvais données entrées", "Attention", MessageBoxButtons.OK);
+            }
         }
     }
 }

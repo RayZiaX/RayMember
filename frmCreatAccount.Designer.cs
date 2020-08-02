@@ -38,6 +38,8 @@
             this.cBGender = new System.Windows.Forms.ComboBox();
             this.btnConfimCC = new System.Windows.Forms.Button();
             this.btnCancelCC = new System.Windows.Forms.Button();
+            this.lblNationality = new System.Windows.Forms.Label();
+            this.cbNationality = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblUserNameCC
@@ -113,7 +115,7 @@
             "Homme",
             "Femme",
             "Autre"});
-            this.cBGender.Location = new System.Drawing.Point(514, 78);
+            this.cBGender.Location = new System.Drawing.Point(540, 76);
             this.cBGender.Name = "cBGender";
             this.cBGender.Size = new System.Drawing.Size(121, 28);
             this.cBGender.TabIndex = 4;
@@ -127,6 +129,7 @@
             this.btnConfimCC.TabIndex = 5;
             this.btnConfimCC.Text = "Confirmer";
             this.btnConfimCC.UseVisualStyleBackColor = true;
+            this.btnConfimCC.Click += new System.EventHandler(this.btnConfimCC_Click);
             // 
             // btnCancelCC
             // 
@@ -138,11 +141,45 @@
             this.btnCancelCC.Text = "Annuler";
             this.btnCancelCC.UseVisualStyleBackColor = true;
             // 
+            // lblNationality
+            // 
+            this.lblNationality.AutoSize = true;
+            this.lblNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNationality.Location = new System.Drawing.Point(409, 137);
+            this.lblNationality.Name = "lblNationality";
+            this.lblNationality.Size = new System.Drawing.Size(125, 25);
+            this.lblNationality.TabIndex = 7;
+            this.lblNationality.Text = "Nationnalitée";
+            // 
+            // cbNationality
+            // 
+            this.cbNationality.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNationality.FormattingEnabled = true;
+            this.cbNationality.Items.AddRange(new object[] {
+            "United-States",
+            "France",
+            "United Kingdom",
+            "German",
+            "Poland",
+            "Spanish",
+            "Italia",
+            "Brazilia",
+            "Canada",
+            "Japan",
+            "Chinese",
+            "Russian"});
+            this.cbNationality.Location = new System.Drawing.Point(540, 134);
+            this.cbNationality.Name = "cbNationality";
+            this.cbNationality.Size = new System.Drawing.Size(121, 28);
+            this.cbNationality.TabIndex = 8;
+            // 
             // frmCreatAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 395);
+            this.Controls.Add(this.cbNationality);
+            this.Controls.Add(this.lblNationality);
             this.Controls.Add(this.btnCancelCC);
             this.Controls.Add(this.btnConfimCC);
             this.Controls.Add(this.cBGender);
@@ -173,5 +210,7 @@
         private System.Windows.Forms.ComboBox cBGender;
         private System.Windows.Forms.Button btnConfimCC;
         private System.Windows.Forms.Button btnCancelCC;
+        private System.Windows.Forms.Label lblNationality;
+        private System.Windows.Forms.ComboBox cbNationality;
     }
 }

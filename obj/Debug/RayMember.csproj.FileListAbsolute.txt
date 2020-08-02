@@ -10,3 +10,20 @@ G:\Developpement\Test codage\Csharp\RayMember\obj\Debug\RayMember.exe
 G:\Developpement\Test codage\Csharp\RayMember\obj\Debug\RayMember.pdb
 G:\Developpement\Test codage\Csharp\RayMember\obj\Debug\RayMember.frmCreatAccount.resources
 G:\Developpement\Test codage\Csharp\RayMember\obj\Debug\RayMember.FrmAddAccount.resources
+G:\Developpement\Projet\RayMember\bin\Debug\RayMember.exe.config
+G:\Developpement\Projet\RayMember\bin\Debug\RayMember.exe
+G:\Developpement\Projet\RayMember\bin\Debug\RayMember.pdb
+G:\Developpement\Projet\RayMember\obj\Debug\RayMember.csprojAssemblyReference.cache
+G:\Developpement\Projet\RayMember\obj\Debug\RayMember.frmConnexion.resources
+G:\Developpement\Projet\RayMember\obj\Debug\RayMember.frmAddAccount.resources
+G:\Developpement\Projet\RayMember\obj\Debug\RayMember.frmCreatAccount.resources
+G:\Developpement\Projet\RayMember\obj\Debug\RayMember.frmMainMenu.resources
+G:\Developpement\Projet\RayMember\obj\Debug\RayMember.Properties.Resources.resources
+G:\Developpement\Projet\RayMember\obj\Debug\RayMember.csproj.GenerateResource.cache
+G:\Developpement\Projet\RayMember\obj\Debug\RayMember.csproj.CoreCompileInputs.cache
+G:\Developpement\Projet\RayMember\obj\Debug\RayMember.exe
+G:\Developpement\Projet\RayMember\obj\Debug\RayMember.pdb
+G:\Developpement\Projet\RayMember\bin\Debug\MySql.Data.dll
+G:\Developpement\Projet\RayMember\bin\Debug\MySql.Data.Entity.dll
+G:\Developpement\Projet\RayMember\bin\Debug\MySql.Web.dll
+G:\Developpement\Projet\RayMember\obj\Debug\RayMember.csproj.CopyComplete
