@@ -1,0 +1,12 @@
+G:\Developpement\Test codage\Csharp\RayMember\bin\Debug\RayMember.exe.config
+G:\Developpement\Test codage\Csharp\RayMember\bin\Debug\RayMember.exe
+G:\Developpement\Test codage\Csharp\RayMember\bin\Debug\RayMember.pdb
+G:\Developpement\Test codage\Csharp\RayMember\obj\Debug\RayMember.csprojAssemblyReference.cache
+G:\Developpement\Test codage\Csharp\RayMember\obj\Debug\RayMember.frmConnexion.resources
+G:\Developpement\Test codage\Csharp\RayMember\obj\Debug\RayMember.Properties.Resources.resources
+G:\Developpement\Test codage\Csharp\RayMember\obj\Debug\RayMember.csproj.GenerateResource.cache
+G:\Developpement\Test codage\Csharp\RayMember\obj\Debug\RayMember.csproj.CoreCompileInputs.cache
+G:\Developpement\Test codage\Csharp\RayMember\obj\Debug\RayMember.exe
+G:\Developpement\Test codage\Csharp\RayMember\obj\Debug\RayMember.pdb
+G:\Developpement\Test codage\Csharp\RayMember\obj\Debug\RayMember.frmCreatAccount.resources
+G:\Developpement\Test codage\Csharp\RayMember\obj\Debug\RayMember.FrmAddAccount.resources
