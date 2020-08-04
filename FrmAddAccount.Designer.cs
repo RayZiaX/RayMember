@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddAccount));
             this.lblTypeAccount = new System.Windows.Forms.Label();
             this.lblUserNameAccount = new System.Windows.Forms.Label();
             this.lblPasswordAccount = new System.Windows.Forms.Label();
@@ -44,14 +46,19 @@
             this.cbQuestion1 = new System.Windows.Forms.ComboBox();
             this.cbQuestion2 = new System.Windows.Forms.ComboBox();
             this.cbQuestion3 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblAnswer3 = new System.Windows.Forms.Label();
+            this.lblAnswer2 = new System.Windows.Forms.Label();
+            this.lblAnswer1 = new System.Windows.Forms.Label();
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.btnCancelAdd = new System.Windows.Forms.Button();
+            this.lblOtherAccountType = new System.Windows.Forms.Label();
+            this.inputAnswer1 = new System.Windows.Forms.TextBox();
+            this.inputAnswer2 = new System.Windows.Forms.TextBox();
+            this.inputAnswer3 = new System.Windows.Forms.TextBox();
+            this.inputOtherAccountCC = new System.Windows.Forms.TextBox();
+            this.picTypeAccount = new System.Windows.Forms.PictureBox();
+            this.picListAccount = new System.Windows.Forms.ImageList(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.picTypeAccount)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTypeAccount
@@ -96,16 +103,30 @@
             // 
             // cbTypeAccount
             // 
+            this.cbTypeAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTypeAccount.FormattingEnabled = true;
-            this.cbTypeAccount.Location = new System.Drawing.Point(308, 49);
+            this.cbTypeAccount.Items.AddRange(new object[] {
+            "Steam",
+            "Discord",
+            "Battle.net",
+            "Uplay",
+            "Origin",
+            "Microsoft",
+            "GOG",
+            "Epic Game",
+            "Twitch",
+            "Amazon",
+            "Autre"});
+            this.cbTypeAccount.Location = new System.Drawing.Point(290, 49);
             this.cbTypeAccount.Name = "cbTypeAccount";
-            this.cbTypeAccount.Size = new System.Drawing.Size(121, 21);
+            this.cbTypeAccount.Size = new System.Drawing.Size(121, 28);
             this.cbTypeAccount.TabIndex = 4;
+            this.cbTypeAccount.SelectedIndexChanged += new System.EventHandler(this.cbTypeAccount_SelectedIndexChanged);
             // 
             // inputUserNameAccount
             // 
             this.inputUserNameAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputUserNameAccount.Location = new System.Drawing.Point(308, 93);
+            this.inputUserNameAccount.Location = new System.Drawing.Point(290, 93);
             this.inputUserNameAccount.Name = "inputUserNameAccount";
             this.inputUserNameAccount.Size = new System.Drawing.Size(121, 26);
             this.inputUserNameAccount.TabIndex = 5;
@@ -113,7 +134,7 @@
             // inputPasswordAccount
             // 
             this.inputPasswordAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputPasswordAccount.Location = new System.Drawing.Point(308, 138);
+            this.inputPasswordAccount.Location = new System.Drawing.Point(290, 138);
             this.inputPasswordAccount.Name = "inputPasswordAccount";
             this.inputPasswordAccount.Size = new System.Drawing.Size(121, 26);
             this.inputPasswordAccount.TabIndex = 6;
@@ -121,7 +142,7 @@
             // inputEmailAccount
             // 
             this.inputEmailAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputEmailAccount.Location = new System.Drawing.Point(308, 186);
+            this.inputEmailAccount.Location = new System.Drawing.Point(290, 186);
             this.inputEmailAccount.Name = "inputEmailAccount";
             this.inputEmailAccount.Size = new System.Drawing.Size(121, 26);
             this.inputEmailAccount.TabIndex = 7;
@@ -130,7 +151,7 @@
             // 
             this.lblTagAccount.AutoSize = true;
             this.lblTagAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTagAccount.Location = new System.Drawing.Point(435, 96);
+            this.lblTagAccount.Location = new System.Drawing.Point(500, 91);
             this.lblTagAccount.Name = "lblTagAccount";
             this.lblTagAccount.Size = new System.Drawing.Size(36, 20);
             this.lblTagAccount.TabIndex = 8;
@@ -139,7 +160,7 @@
             // inputTagAccount
             // 
             this.inputTagAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputTagAccount.Location = new System.Drawing.Point(477, 94);
+            this.inputTagAccount.Location = new System.Drawing.Point(600, 91);
             this.inputTagAccount.Name = "inputTagAccount";
             this.inputTagAccount.Size = new System.Drawing.Size(54, 26);
             this.inputTagAccount.TabIndex = 9;
@@ -209,68 +230,38 @@
             this.cbQuestion3.TabIndex = 15;
             this.cbQuestion3.Visible = false;
             // 
-            // comboBox1
+            // lblAnswer3
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(462, 325);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(128, 28);
-            this.comboBox1.TabIndex = 21;
-            this.comboBox1.Visible = false;
+            this.lblAnswer3.AutoSize = true;
+            this.lblAnswer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer3.Location = new System.Drawing.Point(355, 330);
+            this.lblAnswer3.Name = "lblAnswer3";
+            this.lblAnswer3.Size = new System.Drawing.Size(101, 20);
+            this.lblAnswer3.TabIndex = 18;
+            this.lblAnswer3.Text = "Réponse n°3";
+            this.lblAnswer3.Visible = false;
             // 
-            // comboBox2
+            // lblAnswer2
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(462, 291);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(128, 28);
-            this.comboBox2.TabIndex = 20;
-            this.comboBox2.Visible = false;
+            this.lblAnswer2.AutoSize = true;
+            this.lblAnswer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer2.Location = new System.Drawing.Point(355, 299);
+            this.lblAnswer2.Name = "lblAnswer2";
+            this.lblAnswer2.Size = new System.Drawing.Size(101, 20);
+            this.lblAnswer2.TabIndex = 17;
+            this.lblAnswer2.Text = "Réponse n°2";
+            this.lblAnswer2.Visible = false;
             // 
-            // comboBox3
+            // lblAnswer1
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(462, 257);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(128, 28);
-            this.comboBox3.TabIndex = 19;
-            this.comboBox3.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(355, 330);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 20);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Réponse n°3";
-            this.label1.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(355, 299);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 20);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Réponse n°2";
-            this.label2.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(355, 265);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 20);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Réponse n°1";
-            this.label3.Visible = false;
+            this.lblAnswer1.AutoSize = true;
+            this.lblAnswer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer1.Location = new System.Drawing.Point(355, 265);
+            this.lblAnswer1.Name = "lblAnswer1";
+            this.lblAnswer1.Size = new System.Drawing.Size(101, 20);
+            this.lblAnswer1.TabIndex = 16;
+            this.lblAnswer1.Text = "Réponse n°1";
+            this.lblAnswer1.Visible = false;
             // 
             // btnAddAccount
             // 
@@ -281,6 +272,7 @@
             this.btnAddAccount.TabIndex = 22;
             this.btnAddAccount.Text = "Ajouter";
             this.btnAddAccount.UseVisualStyleBackColor = true;
+            this.btnAddAccount.Click += new System.EventHandler(this.btnAddAccount_Click);
             // 
             // btnCancelAdd
             // 
@@ -293,20 +285,90 @@
             this.btnCancelAdd.UseVisualStyleBackColor = true;
             this.btnCancelAdd.Click += new System.EventHandler(this.btnCancelAdd_Click);
             // 
+            // lblOtherAccountType
+            // 
+            this.lblOtherAccountType.AutoSize = true;
+            this.lblOtherAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOtherAccountType.Location = new System.Drawing.Point(454, 50);
+            this.lblOtherAccountType.Name = "lblOtherAccountType";
+            this.lblOtherAccountType.Size = new System.Drawing.Size(140, 20);
+            this.lblOtherAccountType.TabIndex = 24;
+            this.lblOtherAccountType.Text = "un autre ? lequel ?";
+            this.lblOtherAccountType.Visible = false;
+            // 
+            // inputAnswer1
+            // 
+            this.inputAnswer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputAnswer1.Location = new System.Drawing.Point(477, 264);
+            this.inputAnswer1.Name = "inputAnswer1";
+            this.inputAnswer1.Size = new System.Drawing.Size(154, 26);
+            this.inputAnswer1.TabIndex = 25;
+            // 
+            // inputAnswer2
+            // 
+            this.inputAnswer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputAnswer2.Location = new System.Drawing.Point(477, 294);
+            this.inputAnswer2.Name = "inputAnswer2";
+            this.inputAnswer2.Size = new System.Drawing.Size(154, 26);
+            this.inputAnswer2.TabIndex = 26;
+            // 
+            // inputAnswer3
+            // 
+            this.inputAnswer3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputAnswer3.Location = new System.Drawing.Point(477, 325);
+            this.inputAnswer3.Name = "inputAnswer3";
+            this.inputAnswer3.Size = new System.Drawing.Size(154, 26);
+            this.inputAnswer3.TabIndex = 27;
+            // 
+            // inputOtherAccountCC
+            // 
+            this.inputOtherAccountCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputOtherAccountCC.Location = new System.Drawing.Point(600, 43);
+            this.inputOtherAccountCC.Name = "inputOtherAccountCC";
+            this.inputOtherAccountCC.Size = new System.Drawing.Size(100, 26);
+            this.inputOtherAccountCC.TabIndex = 28;
+            this.inputOtherAccountCC.Visible = false;
+            // 
+            // picTypeAccount
+            // 
+            this.picTypeAccount.Location = new System.Drawing.Point(416, 49);
+            this.picTypeAccount.Name = "picTypeAccount";
+            this.picTypeAccount.Size = new System.Drawing.Size(32, 32);
+            this.picTypeAccount.TabIndex = 29;
+            this.picTypeAccount.TabStop = false;
+            // 
+            // picListAccount
+            // 
+            this.picListAccount.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("picListAccount.ImageStream")));
+            this.picListAccount.TransparentColor = System.Drawing.Color.Transparent;
+            this.picListAccount.Images.SetKeyName(0, "steam-logo.jpg");
+            this.picListAccount.Images.SetKeyName(1, "Discord-logo.jpg");
+            this.picListAccount.Images.SetKeyName(2, "BattleNEt-logo.png");
+            this.picListAccount.Images.SetKeyName(3, "uplay-logo.jpg");
+            this.picListAccount.Images.SetKeyName(4, "origin-logo.jpg");
+            this.picListAccount.Images.SetKeyName(5, "microsoft-logo.jpg");
+            this.picListAccount.Images.SetKeyName(6, "gog-logo.jpg");
+            this.picListAccount.Images.SetKeyName(7, "epic_games-logo.jpg");
+            this.picListAccount.Images.SetKeyName(8, "twitch-logo.jpg");
+            this.picListAccount.Images.SetKeyName(9, "amazon-logo.jpg");
+            // 
             // frmAddAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(712, 466);
+            this.Controls.Add(this.picTypeAccount);
+            this.Controls.Add(this.inputOtherAccountCC);
+            this.Controls.Add(this.inputAnswer3);
+            this.Controls.Add(this.inputAnswer2);
+            this.Controls.Add(this.inputAnswer1);
+            this.Controls.Add(this.lblOtherAccountType);
             this.Controls.Add(this.btnCancelAdd);
             this.Controls.Add(this.btnAddAccount);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblAnswer3);
+            this.Controls.Add(this.lblAnswer2);
+            this.Controls.Add(this.lblAnswer1);
             this.Controls.Add(this.cbQuestion3);
             this.Controls.Add(this.cbQuestion2);
             this.Controls.Add(this.cbQuestion1);
@@ -326,6 +388,7 @@
             this.Name = "frmAddAccount";
             this.Text = "Ajout";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmAddAccount_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.picTypeAccount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,13 +412,17 @@
         private System.Windows.Forms.ComboBox cbQuestion1;
         private System.Windows.Forms.ComboBox cbQuestion2;
         private System.Windows.Forms.ComboBox cbQuestion3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblAnswer3;
+        private System.Windows.Forms.Label lblAnswer2;
+        private System.Windows.Forms.Label lblAnswer1;
         private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.Button btnCancelAdd;
+        private System.Windows.Forms.Label lblOtherAccountType;
+        private System.Windows.Forms.TextBox inputAnswer1;
+        private System.Windows.Forms.TextBox inputAnswer2;
+        private System.Windows.Forms.TextBox inputAnswer3;
+        private System.Windows.Forms.TextBox inputOtherAccountCC;
+        private System.Windows.Forms.PictureBox picTypeAccount;
+        private System.Windows.Forms.ImageList picListAccount;
     }
 }

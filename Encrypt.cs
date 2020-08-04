@@ -10,13 +10,13 @@ namespace RayMember
     class Encrypt
     {
         private string m_pssw;
-        public string init (string a)
+        public string Init (string a)
         {
             m_pssw = a;
-            string hash = chiffre(m_pssw);
+            string hash = Chiffre(m_pssw);
             return hash;
         }
-        private string chiffre(string a)
+        private string Chiffre(string a)
         {
             using (SHA512 sHA512Hash = SHA512.Create())
             {

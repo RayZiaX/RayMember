@@ -1,6 +1,6 @@
 ﻿namespace RayMember
 {
-    partial class frmCreatAccount
+    partial class FrmCreatAccount
     {
         /// <summary>
         /// Required designer variable.
@@ -173,7 +173,7 @@
             this.cbNationality.Size = new System.Drawing.Size(121, 28);
             this.cbNationality.TabIndex = 8;
             // 
-            // frmCreatAccount
+            // FrmCreatAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -190,7 +190,7 @@
             this.Controls.Add(this.lvlEmailCC);
             this.Controls.Add(this.lblPasswordCC);
             this.Controls.Add(this.lblUserNameCC);
-            this.Name = "frmCreatAccount";
+            this.Name = "FrmCreatAccount";
             this.Text = "frmCreatAccount";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCreatAccount_FormClosed);
             this.ResumeLayout(false);

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RayMember
 {
-    public partial class frmCreatAccount : Form
+    public partial class FrmCreatAccount : Form
     {
-        public frmCreatAccount()
+        public FrmCreatAccount()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace RayMember
                 string userName = inputUserNameCC.Text;
                 string pswNoneEncrypt = inputPasswordCC.Text;
                 Encrypt encrypt = new Encrypt();
-                string psw = encrypt.init(pswNoneEncrypt);
+                string psw = encrypt.Init(pswNoneEncrypt);
                 string email = inputEmailCC.Text;
                 string gender = cBGender.Text;
                 string nationality = cbNationality.Text;
