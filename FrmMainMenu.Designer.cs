@@ -83,6 +83,7 @@
             this.modificationItemMenus.Name = "modificationItemMenus";
             this.modificationItemMenus.Size = new System.Drawing.Size(144, 22);
             this.modificationItemMenus.Text = "Modifier";
+            this.modificationItemMenus.Click += new System.EventHandler(this.modificationItemMenus_Click);
             // 
             // disconnectItemMenus
             // 
@@ -141,6 +142,7 @@
             this.btnDeleteAccount.TabIndex = 4;
             this.btnDeleteAccount.Text = "Supprimer";
             this.btnDeleteAccount.UseVisualStyleBackColor = true;
+            this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
             // 
             // btnModifAccount
             // 
@@ -151,6 +153,7 @@
             this.btnModifAccount.TabIndex = 5;
             this.btnModifAccount.Text = "Modifier";
             this.btnModifAccount.UseVisualStyleBackColor = true;
+            this.btnModifAccount.Click += new System.EventHandler(this.btnModifAccount_Click);
             // 
             // listAccount
             // 
@@ -168,6 +171,7 @@
             this.listAccount.TabIndex = 6;
             this.listAccount.UseCompatibleStateImageBehavior = false;
             this.listAccount.View = System.Windows.Forms.View.Details;
+            this.listAccount.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listAccount_MouseDoubleClick);
             // 
             // columnTypeAccount
             // 

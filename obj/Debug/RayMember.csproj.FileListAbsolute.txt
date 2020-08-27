@@ -27,3 +27,5 @@ G:\Developpement\Projet\RayMember\bin\Debug\MySql.Data.dll
 G:\Developpement\Projet\RayMember\bin\Debug\MySql.Data.Entity.dll
 G:\Developpement\Projet\RayMember\bin\Debug\MySql.Web.dll
 G:\Developpement\Projet\RayMember\obj\Debug\RayMember.csproj.CopyComplete
+G:\Developpement\Projet\RayMember\obj\Debug\RayMember.FrmChangeUserAccount.resources
+G:\Developpement\Projet\RayMember\obj\Debug\RayMember.FrmChangeAccounts.resources

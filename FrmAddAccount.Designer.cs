@@ -156,6 +156,7 @@
             this.lblTagAccount.Size = new System.Drawing.Size(36, 20);
             this.lblTagAccount.TabIndex = 8;
             this.lblTagAccount.Text = "Tag";
+            this.lblTagAccount.Visible = false;
             // 
             // inputTagAccount
             // 
@@ -303,6 +304,7 @@
             this.inputAnswer1.Name = "inputAnswer1";
             this.inputAnswer1.Size = new System.Drawing.Size(154, 26);
             this.inputAnswer1.TabIndex = 25;
+            this.inputAnswer1.Visible = false;
             // 
             // inputAnswer2
             // 
@@ -311,6 +313,7 @@
             this.inputAnswer2.Name = "inputAnswer2";
             this.inputAnswer2.Size = new System.Drawing.Size(154, 26);
             this.inputAnswer2.TabIndex = 26;
+            this.inputAnswer2.Visible = false;
             // 
             // inputAnswer3
             // 
@@ -319,6 +322,7 @@
             this.inputAnswer3.Name = "inputAnswer3";
             this.inputAnswer3.Size = new System.Drawing.Size(154, 26);
             this.inputAnswer3.TabIndex = 27;
+            this.inputAnswer3.Visible = false;
             // 
             // inputOtherAccountCC
             // 

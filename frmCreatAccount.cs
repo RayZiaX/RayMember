@@ -29,7 +29,7 @@ namespace RayMember
                 string userName = inputUserNameCC.Text;
                 string pswNoneEncrypt = inputPasswordCC.Text;
                 Encrypt encrypt = new Encrypt();
-                string psw = encrypt.Init(pswNoneEncrypt);
+                string psw = encrypt.Hash(pswNoneEncrypt);
                 string email = inputEmailCC.Text;
                 string gender = cBGender.Text;
                 string nationality = cbNationality.Text;

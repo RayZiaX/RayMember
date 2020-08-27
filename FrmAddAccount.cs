@@ -43,6 +43,8 @@ namespace RayMember
                     picTypeAccount.Image = picListAccount.Images[currentSelect];
                     lblTagAccount.Visible = false;
                     inputTagAccount.Visible = false;
+                    lblOtherAccountType.Visible = false;
+                    inputOtherAccountCC.Visible = false;
                     lblQuestion1.Visible = false;
                     lblQuestion2.Visible = false;
                     lblQuestion3.Visible = false;
@@ -60,6 +62,8 @@ namespace RayMember
                     picTypeAccount.Image = picListAccount.Images[currentSelect];
                     lblTagAccount.Visible = true;
                     inputTagAccount.Visible = true;
+                    lblOtherAccountType.Visible = false;
+                    inputOtherAccountCC.Visible = false;
                     lblQuestion1.Visible = false;
                     lblQuestion2.Visible = false;
                     lblQuestion3.Visible = false;
@@ -77,6 +81,8 @@ namespace RayMember
                     picTypeAccount.Image = picListAccount.Images[currentSelect];
                     lblTagAccount.Visible = true;
                     inputTagAccount.Visible = true;
+                    lblOtherAccountType.Visible = false;
+                    inputOtherAccountCC.Visible = false;
                     lblQuestion1.Visible = false;
                     lblQuestion2.Visible = false;
                     lblQuestion3.Visible = false;
@@ -94,6 +100,8 @@ namespace RayMember
                     picTypeAccount.Image = picListAccount.Images[currentSelect];
                     lblTagAccount.Visible = false;
                     inputTagAccount.Visible = false;
+                    lblOtherAccountType.Visible = false;
+                    inputOtherAccountCC.Visible = false;
                     lblQuestion1.Visible = false;
                     lblQuestion2.Visible = false;
                     lblQuestion3.Visible = false;
@@ -111,6 +119,8 @@ namespace RayMember
                     picTypeAccount.Image = picListAccount.Images[currentSelect];
                     lblTagAccount.Visible = false;
                     inputTagAccount.Visible = false;
+                    lblOtherAccountType.Visible = false;
+                    inputOtherAccountCC.Visible = false;
                     lblQuestion1.Visible = false;
                     lblQuestion2.Visible = false;
                     lblQuestion3.Visible = false;
@@ -128,6 +138,8 @@ namespace RayMember
                     picTypeAccount.Image = picListAccount.Images[currentSelect];
                     lblTagAccount.Visible = false;
                     inputTagAccount.Visible = false;
+                    lblOtherAccountType.Visible = false;
+                    inputOtherAccountCC.Visible = false;
                     lblQuestion1.Visible = true;
                     lblQuestion2.Visible = true;
                     lblQuestion3.Visible = true;
@@ -145,6 +157,8 @@ namespace RayMember
                     picTypeAccount.Image = picListAccount.Images[currentSelect];
                     lblTagAccount.Visible = false;
                     inputTagAccount.Visible = false;
+                    lblOtherAccountType.Visible = false;
+                    inputOtherAccountCC.Visible = false;
                     lblQuestion1.Visible = false;
                     lblQuestion2.Visible = false;
                     lblQuestion3.Visible = false;
@@ -162,6 +176,8 @@ namespace RayMember
                     picTypeAccount.Image = picListAccount.Images[currentSelect];
                     lblTagAccount.Visible = false;
                     inputTagAccount.Visible = false;
+                    lblOtherAccountType.Visible = false;
+                    inputOtherAccountCC.Visible = false;
                     lblQuestion1.Visible = false;
                     lblQuestion2.Visible = false;
                     lblQuestion3.Visible = false;
@@ -179,6 +195,8 @@ namespace RayMember
                     picTypeAccount.Image = picListAccount.Images[currentSelect];
                     lblTagAccount.Visible = false;
                     inputTagAccount.Visible = false;
+                    lblOtherAccountType.Visible = false;
+                    inputOtherAccountCC.Visible = false;
                     lblQuestion1.Visible = false;
                     lblQuestion2.Visible = false;
                     lblQuestion3.Visible = false;
@@ -194,6 +212,8 @@ namespace RayMember
                     break;
                 case 9:
                     picTypeAccount.Image = picListAccount.Images[currentSelect];
+                    lblOtherAccountType.Visible = false;
+                    inputOtherAccountCC.Visible = false;
                     lblTagAccount.Visible = false;
                     inputTagAccount.Visible = false;
                     lblQuestion1.Visible = false;
@@ -213,6 +233,7 @@ namespace RayMember
                     picTypeAccount.Image = null;
                     lblOtherAccountType.Visible = true;
                     inputOtherAccountCC.Visible = true;
+                    inputTagAccount.Text = null;
                     lblTagAccount.Visible = true;
                     inputTagAccount.Visible = true;
                     lblQuestion1.Visible = true;
@@ -241,7 +262,7 @@ namespace RayMember
         private void btnAddAccount_Click(object sender, EventArgs e)
         {
             Encrypt encrypt = new Encrypt();
-            string pswEncrypt = encrypt.Init(inputPasswordAccount.Text);
+            string pswEncrypt = encrypt.Encryption(inputPasswordAccount.Text);
             DBUse dB = new DBUse();
             int currentSelect = cbTypeAccount.SelectedIndex;
             switch (currentSelect)
@@ -419,6 +440,15 @@ namespace RayMember
                     }
                     break;
                 case 10:
+                    if(dB.AddAccount(inputOtherAccountCC.Text, inputUserNameAccount.Text, pswEncrypt, inputEmailAccount.Text, m_idUser, inputTagAccount.Text, cbQuestion1.Text, cbQuestion2.Text, cbQuestion3.Text, inputAnswer1.Text, inputAnswer2.Text, inputAnswer3.Text))
+                    {
+                        if (MessageBox.Show("Vos données on été entrer", "Information", MessageBoxButtons.OK) == DialogResult.OK)
+                        {
+                            FrmMainMenu frmMainMenu = new FrmMainMenu();
+                            frmMainMenu.Show();
+                            this.Hide();
+                        }
+                    }
                     break;
                 default:
                     MessageBox.Show("Une donnée a été mal saisie", "Attention", MessageBoxButtons.OK);

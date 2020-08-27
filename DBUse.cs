@@ -160,13 +160,170 @@ namespace RayMember
                 return false;
             }
         }
+        public bool ShowInfo(object a)
+        {
+            MySqlConnection bdd = new MySqlConnection(m_inf);
+            string stmt = $"SELECT account_userName,account_password FROM accounts WHERE account_id = {a}";
+            try
+            {
+                bdd.Open();
+            }
+            catch (Exception err)
+            {
+                bdd.Close();
+                Console.WriteLine("error: " + err);
+                return false;
+            }
+            MySqlCommand cmd = new MySqlCommand(stmt, bdd);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    string line = reader.GetString(i);
+                    tabLine.Add(line);
+                }
+            }
+            if (tabLine.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
 
-        public List<string>infoUser()
+        }
+
+        public bool VerifAccount(int a)
+        {
+
+            MySqlConnection bdd = new MySqlConnection(m_inf);
+            string stmt = $"SELECT customer_userName,customer_email,customer_nationality,customer_gender FROM customers WHERE customer_id = '{a}'";
+            MySqlCommand cmd = new MySqlCommand(stmt, bdd);
+            try
+            {
+                bdd.Open();
+            }
+            catch (Exception err)
+            {
+                bdd.Close();
+                Console.WriteLine("error: " + err);
+                return false;
+            }
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    string line = reader.GetString(i);
+                    tabLine.Add(line);
+                }
+            }
+            if (tabLine.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool ChangeAccount(string a, string b, string c, string d, string e,int id)
+        {
+            MySqlConnection bdd = new MySqlConnection(m_inf);
+            try
+            {
+                string stmt = $"UPDATE customers SET customer_userName='{a}', customer_password='{b}', customer_email='{c}', customer_nationality='{d}', customer_gender='{e}' WHERE customer_id= '{id}'";
+                MySqlCommand cmd = new MySqlCommand(stmt, bdd);
+                MySqlDataReader reader;
+                bdd.Open();
+                reader = cmd.ExecuteReader();
+                while(reader.Read())
+                {
+
+                }
+                bdd.Close();
+                return true;
+            }
+            catch (Exception err)
+            {
+                bdd.Close();
+                Console.WriteLine("error: " + err);
+                return false;
+            }
+        }
+        public bool DeleteAccounts(object a)
+        {
+            MySqlConnection bdd = new MySqlConnection(m_inf);
+            string stmt = $"DELETE FROM accounts WHERE account_id = {a}";
+            MySqlCommand cmd = new MySqlCommand(stmt, bdd);
+            MySqlDataReader reader;
+            try
+            {
+                bdd.Open();
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+
+                }
+                bdd.Close();
+                return true;
+            }
+            catch (Exception err)
+            {
+                bdd.Close();
+                Console.WriteLine("error: " + err);
+                return false;
+            }
+        }
+        public bool SelectAccounts(object a)
+        {
+            MySqlConnection bdd = new MySqlConnection(m_inf);
+            string stmt = $"SELECT account_type,account_userName,account_email,account_tag,account_Q1,account_Q2, account_Q3, account_answer1, account_answer2, account_answer3 FROM accounts WHERE account_id = '{a}'";
+            MySqlCommand cmd = new MySqlCommand(stmt, bdd);
+            try
+            {
+                bdd.Open();
+            }
+            catch (Exception err)
+            {
+                bdd.Close();
+                Console.WriteLine("error: " + err);
+                return false;
+            }
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    string line = reader.GetString(i);
+                    tabLine.Add(line);
+                }
+            }
+            if (tabLine.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
+        public List<string> ShowInfoUser()
+        {
+            return tabLine;
+        }
+        public List<string>InfoUser()
         {
             tabLine.RemoveAt(2);
             return tabLine;
         }
-        public List<List<string>> tabAccount()
+
+        public List<List<string>> TabAccount()
         {
             return m_tabAccount;
         }

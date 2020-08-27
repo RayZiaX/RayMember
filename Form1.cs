@@ -46,13 +46,13 @@ namespace RayMember
             string userNAme = inputUserName.Text;
             string password = inputPassword.Text;
             Encrypt encrypt = new Encrypt();
-            string psw = encrypt.Init(password);
+            string psw = encrypt.Hash(password);
             if (dB.Auth(userNAme, psw))
             {
                 FrmMainMenu frmMainMenu = new FrmMainMenu();
                 this.Hide();
                 List<string> infoUser = new List<string> { };
-                infoUser = dB.infoUser();
+                infoUser = dB.InfoUser();
                 frmMainMenu.userId = Int32.Parse(infoUser[0]);
                 frmMainMenu.userName = infoUser[1];
                 frmMainMenu.Show();
