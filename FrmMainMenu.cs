@@ -29,20 +29,29 @@ namespace RayMember
 
         private void btnShowInfo_Click(object sender, EventArgs e)
         {
-            DBUse dB = new DBUse();
-            Encrypt encrypt = new Encrypt();
-            bool verif = dB.ShowInfo(listAccount.SelectedItems[0].Tag);
-            if (verif)
+            try
             {
-                List<string> tab = dB.ShowInfoUser();
-                string psw = encrypt.Decryption(tab[1]);
-                MessageBox.Show($"\tNom d'utilisateur: \n\t{tab[0]}\n \n\tmot de passe: \n\t{psw}", "Information", MessageBoxButtons.OK);
-            }
-            else
-            {
-                MessageBox.Show("Une erreur est survenue", "Attention", MessageBoxButtons.OK);
+                DBUse dB = new DBUse();
+                Encrypt encrypt = new Encrypt();
+                bool verif = dB.ShowInfo(listAccount.SelectedItems[0].Tag);
+                if (verif)
+                {
+                    List<string> tab = dB.ShowInfoUser();
+                    string psw = encrypt.Decryption(tab[1]);
+                    MessageBox.Show($"\tNom d'utilisateur: \n\t{tab[0]}\n \n\tmot de passe: \n\t{psw}", "Information", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Une erreur est survenue", "Attention", MessageBoxButtons.OK);
 
+                }
             }
+            catch(Exception error)
+            {
+                Console.WriteLine(error);
+                MessageBox.Show("Veuillez séléctionner un compte dans la liste", "Attention", MessageBoxButtons.OK);
+            }
+            
         }
 
         private void addItemMenus_Click(object sender, EventArgs e)
@@ -106,26 +115,43 @@ namespace RayMember
 
             DBUse dB = new DBUse();
             Encrypt encrypt = new Encrypt();
-            bool verif = dB.ShowInfo(listAccount.SelectedItems[0].Tag);
-            Console.WriteLine(listAccount.SelectedItems[0].Tag);
-            if (verif)
+            try
             {
-                List<string> tab = dB.ShowInfoUser();
-                string psw = encrypt.Decryption(tab[1]);
-                MessageBox.Show($"\tNom d'utilisateur: \n\t{tab[0]}\n \n\tmot de passe: \n\t{psw}", "Information", MessageBoxButtons.OK);
-            }
-            else {
-                MessageBox.Show("Une erreur est survenue", "Attention", MessageBoxButtons.OK);
+                bool verif = dB.ShowInfo(listAccount.SelectedItems[0].Tag);
+                Console.WriteLine(listAccount.SelectedItems[0].Tag);
+                if (verif)
+                {
+                    List<string> tab = dB.ShowInfoUser();
+                    string psw = encrypt.Decryption(tab[1]);
+                    MessageBox.Show($"\tNom d'utilisateur: \n\t{tab[0]}\n \n\tmot de passe: \n\t{psw}", "Information", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Une erreur est survenue", "Attention", MessageBoxButtons.OK);
 
+                }
             }
+            catch (Exception error)
+            {
+                Console.WriteLine(error);
+            }
+
         }
 
         private void btnModifAccount_Click(object sender, EventArgs e)
         {
             FrmChangeAccounts frmChangeAccounts = new FrmChangeAccounts();
-            frmChangeAccounts.IdAccount = listAccount.SelectedItems[0].Tag;
-            frmChangeAccounts.Show();
-            this.Hide();
+            try
+            {
+                frmChangeAccounts.IdAccount = listAccount.SelectedItems[0].Tag;
+                frmChangeAccounts.Show();
+                this.Hide();
+            }catch(Exception error)
+            {
+                Console.WriteLine(error);
+                MessageBox.Show("Veuillez séléctionner un compte dans la liste", "Attention", MessageBoxButtons.OK);
+            }
+
         }
 
         private void modificationItemMenus_Click(object sender, EventArgs e)
@@ -141,10 +167,17 @@ namespace RayMember
             DBUse dB = new DBUse();
             if (MessageBox.Show("Voulez-vous vraiment supprimer le compte séléctionner ?", "confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                bool verif = dB.DeleteAccounts(listAccount.SelectedItems[0].Tag);
-                if (verif)
+                try 
                 {
-                    MessageBox.Show("Les données ont été supprimer", "Information", MessageBoxButtons.OK);
+                    bool verif = dB.DeleteAccounts(listAccount.SelectedItems[0].Tag);
+                    if (verif)
+                    {
+                        MessageBox.Show("Les données ont été supprimer", "Information", MessageBoxButtons.OK);
+                    }
+                }catch (Exception error)
+                {
+                    Console.WriteLine(error);
+                    MessageBox.Show("Veuillez séléctionner un compte dans la liste", "Attention", MessageBoxButtons.OK);
                 }
             }
             else

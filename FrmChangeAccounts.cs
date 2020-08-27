@@ -24,14 +24,15 @@ namespace RayMember
             bool verif = dB.SelectAccounts(m_idAccount);
             if (verif)
             {
+                string id;
                 List<string> tab = dB.ShowInfoUser();
-                cbTypeAccountChange.Text = tab[0];
+                inputTypeChangeAccountAdd.Text = tab[0];
                 inputUserNameAccountChange.Text = tab[1];
                 inputEmailAccountChange.Text = tab[2];
                 inputTagAccountChange.Text = tab[3];
                 cbQuestion1Change.Text = tab[4];
-                cbQuestion1Change.Text = tab[5];
-                cbQuestion1Change.Text = tab[6];
+                cbQuestion2Change.Text = tab[5];
+                cbQuestion3Change.Text = tab[6];
                 inputAnswer1Change.Text = tab[7];
                 inputAnswer2Change.Text = tab[8];
                 inputAnswer3Change.Text = tab[9];
@@ -52,6 +53,37 @@ namespace RayMember
         private void FrmChangeAccounts_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnAddAccountChange_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Encrypt encrypt = new Encrypt();
+                string psw = encrypt.Encryption(inputPasswordAccountChange.Text);
+                DBUse dB = new DBUse();
+                if(dB.ChangeAccoundAdd(inputTypeChangeAccountAdd.Text, inputUserNameAccountChange.Text, psw, inputEmailAccountChange.Text, inputTagAccountChange.Text, cbQuestion1Change.Text, cbQuestion2Change.Text, cbQuestion3Change.Text, inputAnswer1Change.Text, inputAnswer2Change.Text, inputAnswer3Change.Text, m_idAccount))
+                {
+                    MessageBox.Show("Vos données ont été modifier", "Confirmation", MessageBoxButtons.OK);
+                    FrmMainMenu menu = new FrmMainMenu();
+                    menu.Show();
+                    this.Hide();
+
+                }
+            }
+            catch(Exception error)
+            {
+                Console.WriteLine(error);
+                MessageBox.Show("Veuillez entrez un mot de passe", "Attention", MessageBoxButtons.OK);
+            }
+            
+        }
+
+        private void btnCancelAddChange_Click(object sender, EventArgs e)
+        {
+            FrmMainMenu menu = new FrmMainMenu();
+            menu.Show();
+            this.Hide();
         }
     }
 }

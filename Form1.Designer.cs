@@ -73,8 +73,10 @@
             this.inputPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputPassword.Location = new System.Drawing.Point(106, 217);
             this.inputPassword.Name = "inputPassword";
+            this.inputPassword.PasswordChar = '*';
             this.inputPassword.Size = new System.Drawing.Size(193, 30);
             this.inputPassword.TabIndex = 3;
+            this.inputPassword.UseSystemPasswordChar = true;
             // 
             // lblInfoCC
             // 

@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.inputOtherAccountCCChange = new System.Windows.Forms.TextBox();
             this.inputAnswer3Change = new System.Windows.Forms.TextBox();
             this.inputAnswer2Change = new System.Windows.Forms.TextBox();
             this.inputAnswer1Change = new System.Windows.Forms.TextBox();
-            this.lblOtherAccountTypeChange = new System.Windows.Forms.Label();
             this.btnCancelAddChange = new System.Windows.Forms.Button();
             this.btnAddAccountChange = new System.Windows.Forms.Button();
             this.lblAnswer3Change = new System.Windows.Forms.Label();
@@ -44,26 +42,17 @@
             this.lblQuestion3Change = new System.Windows.Forms.Label();
             this.lblQuestion2Change = new System.Windows.Forms.Label();
             this.lblQuestion1Change = new System.Windows.Forms.Label();
-            this.inputTagAccountChange = new System.Windows.Forms.TextBox();
-            this.lblTagAccountChange = new System.Windows.Forms.Label();
             this.inputEmailAccountChange = new System.Windows.Forms.TextBox();
             this.inputPasswordAccountChange = new System.Windows.Forms.TextBox();
             this.inputUserNameAccountChange = new System.Windows.Forms.TextBox();
-            this.cbTypeAccountChange = new System.Windows.Forms.ComboBox();
             this.lblEmailAddAccountChange = new System.Windows.Forms.Label();
             this.lblPasswordAccountChange = new System.Windows.Forms.Label();
             this.lblUserNameAccountChange = new System.Windows.Forms.Label();
             this.lblTypeAccountChange = new System.Windows.Forms.Label();
+            this.inputTypeChangeAccountAdd = new System.Windows.Forms.TextBox();
+            this.lblTagAccountChange = new System.Windows.Forms.Label();
+            this.inputTagAccountChange = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // inputOtherAccountCCChange
-            // 
-            this.inputOtherAccountCCChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputOtherAccountCCChange.Location = new System.Drawing.Point(618, 33);
-            this.inputOtherAccountCCChange.Name = "inputOtherAccountCCChange";
-            this.inputOtherAccountCCChange.Size = new System.Drawing.Size(100, 26);
-            this.inputOtherAccountCCChange.TabIndex = 55;
-            this.inputOtherAccountCCChange.Visible = false;
             // 
             // inputAnswer3Change
             // 
@@ -72,7 +61,6 @@
             this.inputAnswer3Change.Name = "inputAnswer3Change";
             this.inputAnswer3Change.Size = new System.Drawing.Size(154, 26);
             this.inputAnswer3Change.TabIndex = 54;
-            this.inputAnswer3Change.Visible = false;
             // 
             // inputAnswer2Change
             // 
@@ -81,7 +69,6 @@
             this.inputAnswer2Change.Name = "inputAnswer2Change";
             this.inputAnswer2Change.Size = new System.Drawing.Size(154, 26);
             this.inputAnswer2Change.TabIndex = 53;
-            this.inputAnswer2Change.Visible = false;
             // 
             // inputAnswer1Change
             // 
@@ -90,18 +77,6 @@
             this.inputAnswer1Change.Name = "inputAnswer1Change";
             this.inputAnswer1Change.Size = new System.Drawing.Size(154, 26);
             this.inputAnswer1Change.TabIndex = 52;
-            this.inputAnswer1Change.Visible = false;
-            // 
-            // lblOtherAccountTypeChange
-            // 
-            this.lblOtherAccountTypeChange.AutoSize = true;
-            this.lblOtherAccountTypeChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOtherAccountTypeChange.Location = new System.Drawing.Point(472, 40);
-            this.lblOtherAccountTypeChange.Name = "lblOtherAccountTypeChange";
-            this.lblOtherAccountTypeChange.Size = new System.Drawing.Size(140, 20);
-            this.lblOtherAccountTypeChange.TabIndex = 51;
-            this.lblOtherAccountTypeChange.Text = "un autre ? lequel ?";
-            this.lblOtherAccountTypeChange.Visible = false;
             // 
             // btnCancelAddChange
             // 
@@ -112,6 +87,7 @@
             this.btnCancelAddChange.TabIndex = 50;
             this.btnCancelAddChange.Text = "Retour";
             this.btnCancelAddChange.UseVisualStyleBackColor = true;
+            this.btnCancelAddChange.Click += new System.EventHandler(this.btnCancelAddChange_Click);
             // 
             // btnAddAccountChange
             // 
@@ -122,6 +98,7 @@
             this.btnAddAccountChange.TabIndex = 49;
             this.btnAddAccountChange.Text = "Ajouter";
             this.btnAddAccountChange.UseVisualStyleBackColor = true;
+            this.btnAddAccountChange.Click += new System.EventHandler(this.btnAddAccountChange_Click);
             // 
             // lblAnswer3Change
             // 
@@ -132,7 +109,6 @@
             this.lblAnswer3Change.Size = new System.Drawing.Size(101, 20);
             this.lblAnswer3Change.TabIndex = 48;
             this.lblAnswer3Change.Text = "Réponse n°3";
-            this.lblAnswer3Change.Visible = false;
             // 
             // lblAnswer2Change
             // 
@@ -143,7 +119,6 @@
             this.lblAnswer2Change.Size = new System.Drawing.Size(101, 20);
             this.lblAnswer2Change.TabIndex = 47;
             this.lblAnswer2Change.Text = "Réponse n°2";
-            this.lblAnswer2Change.Visible = false;
             // 
             // lblAnswer1Change
             // 
@@ -154,7 +129,6 @@
             this.lblAnswer1Change.Size = new System.Drawing.Size(101, 20);
             this.lblAnswer1Change.TabIndex = 46;
             this.lblAnswer1Change.Text = "Réponse n°1";
-            this.lblAnswer1Change.Visible = false;
             // 
             // cbQuestion3Change
             // 
@@ -164,7 +138,6 @@
             this.cbQuestion3Change.Name = "cbQuestion3Change";
             this.cbQuestion3Change.Size = new System.Drawing.Size(164, 28);
             this.cbQuestion3Change.TabIndex = 45;
-            this.cbQuestion3Change.Visible = false;
             // 
             // cbQuestion2Change
             // 
@@ -174,7 +147,6 @@
             this.cbQuestion2Change.Name = "cbQuestion2Change";
             this.cbQuestion2Change.Size = new System.Drawing.Size(164, 28);
             this.cbQuestion2Change.TabIndex = 44;
-            this.cbQuestion2Change.Visible = false;
             // 
             // cbQuestion1Change
             // 
@@ -184,7 +156,6 @@
             this.cbQuestion1Change.Name = "cbQuestion1Change";
             this.cbQuestion1Change.Size = new System.Drawing.Size(164, 28);
             this.cbQuestion1Change.TabIndex = 43;
-            this.cbQuestion1Change.Visible = false;
             // 
             // lblQuestion3Change
             // 
@@ -195,7 +166,6 @@
             this.lblQuestion3Change.Size = new System.Drawing.Size(157, 20);
             this.lblQuestion3Change.TabIndex = 42;
             this.lblQuestion3Change.Text = "Question secrete n°3";
-            this.lblQuestion3Change.Visible = false;
             // 
             // lblQuestion2Change
             // 
@@ -206,7 +176,6 @@
             this.lblQuestion2Change.Size = new System.Drawing.Size(157, 20);
             this.lblQuestion2Change.TabIndex = 41;
             this.lblQuestion2Change.Text = "Question secrete n°2";
-            this.lblQuestion2Change.Visible = false;
             // 
             // lblQuestion1Change
             // 
@@ -217,28 +186,6 @@
             this.lblQuestion1Change.Size = new System.Drawing.Size(157, 20);
             this.lblQuestion1Change.TabIndex = 40;
             this.lblQuestion1Change.Text = "Question secrete n°1";
-            this.lblQuestion1Change.Visible = false;
-            // 
-            // inputTagAccountChange
-            // 
-            this.inputTagAccountChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputTagAccountChange.Location = new System.Drawing.Point(639, 82);
-            this.inputTagAccountChange.Name = "inputTagAccountChange";
-            this.inputTagAccountChange.Size = new System.Drawing.Size(54, 26);
-            this.inputTagAccountChange.TabIndex = 39;
-            this.inputTagAccountChange.Text = "#0000";
-            this.inputTagAccountChange.Visible = false;
-            // 
-            // lblTagAccountChange
-            // 
-            this.lblTagAccountChange.AutoSize = true;
-            this.lblTagAccountChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTagAccountChange.Location = new System.Drawing.Point(517, 82);
-            this.lblTagAccountChange.Name = "lblTagAccountChange";
-            this.lblTagAccountChange.Size = new System.Drawing.Size(36, 20);
-            this.lblTagAccountChange.TabIndex = 38;
-            this.lblTagAccountChange.Text = "Tag";
-            this.lblTagAccountChange.Visible = false;
             // 
             // inputEmailAccountChange
             // 
@@ -255,6 +202,7 @@
             this.inputPasswordAccountChange.Name = "inputPasswordAccountChange";
             this.inputPasswordAccountChange.Size = new System.Drawing.Size(121, 26);
             this.inputPasswordAccountChange.TabIndex = 36;
+            this.inputPasswordAccountChange.UseSystemPasswordChar = true;
             // 
             // inputUserNameAccountChange
             // 
@@ -263,27 +211,6 @@
             this.inputUserNameAccountChange.Name = "inputUserNameAccountChange";
             this.inputUserNameAccountChange.Size = new System.Drawing.Size(121, 26);
             this.inputUserNameAccountChange.TabIndex = 35;
-            // 
-            // cbTypeAccountChange
-            // 
-            this.cbTypeAccountChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTypeAccountChange.FormattingEnabled = true;
-            this.cbTypeAccountChange.Items.AddRange(new object[] {
-            "Steam",
-            "Discord",
-            "Battle.net",
-            "Uplay",
-            "Origin",
-            "Microsoft",
-            "GOG",
-            "Epic Game",
-            "Twitch",
-            "Amazon",
-            "Autre"});
-            this.cbTypeAccountChange.Location = new System.Drawing.Point(334, 32);
-            this.cbTypeAccountChange.Name = "cbTypeAccountChange";
-            this.cbTypeAccountChange.Size = new System.Drawing.Size(121, 28);
-            this.cbTypeAccountChange.TabIndex = 34;
             // 
             // lblEmailAddAccountChange
             // 
@@ -325,16 +252,42 @@
             this.lblTypeAccountChange.TabIndex = 30;
             this.lblTypeAccountChange.Text = "Type de compte";
             // 
+            // inputTypeChangeAccountAdd
+            // 
+            this.inputTypeChangeAccountAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputTypeChangeAccountAdd.Location = new System.Drawing.Point(334, 29);
+            this.inputTypeChangeAccountAdd.Name = "inputTypeChangeAccountAdd";
+            this.inputTypeChangeAccountAdd.Size = new System.Drawing.Size(121, 26);
+            this.inputTypeChangeAccountAdd.TabIndex = 56;
+            // 
+            // lblTagAccountChange
+            // 
+            this.lblTagAccountChange.AutoSize = true;
+            this.lblTagAccountChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTagAccountChange.Location = new System.Drawing.Point(472, 35);
+            this.lblTagAccountChange.Name = "lblTagAccountChange";
+            this.lblTagAccountChange.Size = new System.Drawing.Size(36, 20);
+            this.lblTagAccountChange.TabIndex = 38;
+            this.lblTagAccountChange.Text = "Tag";
+            // 
+            // inputTagAccountChange
+            // 
+            this.inputTagAccountChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inputTagAccountChange.Location = new System.Drawing.Point(535, 32);
+            this.inputTagAccountChange.Name = "inputTagAccountChange";
+            this.inputTagAccountChange.Size = new System.Drawing.Size(54, 26);
+            this.inputTagAccountChange.TabIndex = 39;
+            this.inputTagAccountChange.Text = "#0000";
+            // 
             // FrmChangeAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.inputOtherAccountCCChange);
+            this.Controls.Add(this.inputTypeChangeAccountAdd);
             this.Controls.Add(this.inputAnswer3Change);
             this.Controls.Add(this.inputAnswer2Change);
             this.Controls.Add(this.inputAnswer1Change);
-            this.Controls.Add(this.lblOtherAccountTypeChange);
             this.Controls.Add(this.btnCancelAddChange);
             this.Controls.Add(this.btnAddAccountChange);
             this.Controls.Add(this.lblAnswer3Change);
@@ -351,7 +304,6 @@
             this.Controls.Add(this.inputEmailAccountChange);
             this.Controls.Add(this.inputPasswordAccountChange);
             this.Controls.Add(this.inputUserNameAccountChange);
-            this.Controls.Add(this.cbTypeAccountChange);
             this.Controls.Add(this.lblEmailAddAccountChange);
             this.Controls.Add(this.lblPasswordAccountChange);
             this.Controls.Add(this.lblUserNameAccountChange);
@@ -366,11 +318,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox inputOtherAccountCCChange;
         private System.Windows.Forms.TextBox inputAnswer3Change;
         private System.Windows.Forms.TextBox inputAnswer2Change;
         private System.Windows.Forms.TextBox inputAnswer1Change;
-        private System.Windows.Forms.Label lblOtherAccountTypeChange;
         private System.Windows.Forms.Button btnCancelAddChange;
         private System.Windows.Forms.Button btnAddAccountChange;
         private System.Windows.Forms.Label lblAnswer3Change;
@@ -382,15 +332,15 @@
         private System.Windows.Forms.Label lblQuestion3Change;
         private System.Windows.Forms.Label lblQuestion2Change;
         private System.Windows.Forms.Label lblQuestion1Change;
-        private System.Windows.Forms.TextBox inputTagAccountChange;
-        private System.Windows.Forms.Label lblTagAccountChange;
         private System.Windows.Forms.TextBox inputEmailAccountChange;
         private System.Windows.Forms.TextBox inputPasswordAccountChange;
         private System.Windows.Forms.TextBox inputUserNameAccountChange;
-        private System.Windows.Forms.ComboBox cbTypeAccountChange;
         private System.Windows.Forms.Label lblEmailAddAccountChange;
         private System.Windows.Forms.Label lblPasswordAccountChange;
         private System.Windows.Forms.Label lblUserNameAccountChange;
         private System.Windows.Forms.Label lblTypeAccountChange;
+        private System.Windows.Forms.TextBox inputTypeChangeAccountAdd;
+        private System.Windows.Forms.Label lblTagAccountChange;
+        private System.Windows.Forms.TextBox inputTagAccountChange;
     }
 }

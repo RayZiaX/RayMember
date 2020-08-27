@@ -254,6 +254,31 @@ namespace RayMember
                 return false;
             }
         }
+
+        public bool ChangeAccoundAdd(string a, string b, string c, string d, string e, string f, string g, string h, string i, string j, string k, object id)
+        {
+            MySqlConnection bdd = new MySqlConnection(m_inf);
+            try
+            {
+                string stmt = $"UPDATE accounts SET account_type='{a}', account_userName='{b}', account_password='{c}', account_email='{d}', account_tag='{e}', account_Q1='{f}' ,account_Q2='{g}', account_Q3='{h}', account_answer1='{i}', account_answer2='{j}', account_answer3='{k}' WHERE account_id= '{id}'";
+                MySqlCommand cmd = new MySqlCommand(stmt, bdd);
+                MySqlDataReader reader;
+                bdd.Open();
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+
+                }
+                bdd.Close();
+                return true;
+            }
+            catch (Exception err)
+            {
+                bdd.Close();
+                Console.WriteLine("error: " + err);
+                return false;
+            }
+        }
         public bool DeleteAccounts(object a)
         {
             MySqlConnection bdd = new MySqlConnection(m_inf);
